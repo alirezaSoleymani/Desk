@@ -1,0 +1,39 @@
+html,
+body {
+   height: 100%;
+   margin: 0;
+   font-family: Arial, sans-serif;
+   background-color: #26262c;
+}
+
+#app {
+   height: 100%;
+   width: 100%;
+   box-sizing: border-box;
+   padding: 20px 0;
+}
+
+.board {
+   width: 1200px;
+   height: 100%;
+   display: flex;
+   justify-self: center;
+   gap: 20px;
+}
+
+.column {
+   flex: 1;
+   background-color: #1c1c21;
+   border-radius: 8px;
+   padding: 16px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.column h2 {
+   text-align: center;
+   color: #e8e8ec;
+   background-color: #6a6b70;
+   border-radius: 10px;
+   padding: 10px 0;
+   margin: 5px 0;
+}
