@@ -3,10 +3,10 @@ import './style.scss';
 class Board {
    private board: HTMLDivElement;
    private columns: Column[] = [
-      new Column(0, 'To-Do'),
-      new Column(1, 'In Progress'),
-      new Column(2, 'In Review'),
-      new Column(3, 'Done'),
+      new Column(0, 'To-Do', Status.ToDo),
+      new Column(1, 'In Progress', Status.InProgress),
+      new Column(2, 'In Review', Status.InReview),
+      new Column(3, 'Done', Status.Done),
    ];
 
    constructor() {
@@ -31,13 +31,20 @@ class Board {
    }
 }
 
+enum Status {
+   ToDo = 'ToDo',
+   InProgress = 'InProgress',
+   InReview = 'InReview',
+   Done = 'Done',
+}
+
 class Column {
    private colElement: HTMLDivElement;
 
-   constructor(id: number, title: string) {
+   constructor(id: number, title: string, status: Status) {
       this.colElement = document.createElement('div');
       this.colElement.id = `col-${id}`;
-      this.colElement.className = 'column';
+      this.colElement.className = `column ${status.toString()}`;
       this.colElement.innerHTML = `<h2>${title}</h2>`;
    }
 
