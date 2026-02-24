@@ -6,8 +6,9 @@ export class Ticket {
    private static nextId: number = 1;
    private id: number;
 
-   constructor(title: string, description?: string) {
+   constructor(title: string, description?: string, status?: Status) {
       this.id = Ticket.nextId++;
+      if (status) this.status = status;
 
       this.ticket = document.createElement('div');
       this.ticket.classList = `ticket ${this.status.toString()}-ticket`;

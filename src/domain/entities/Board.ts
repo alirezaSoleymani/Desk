@@ -37,4 +37,9 @@ export class Board {
          );
       }
    }
+
+   addTicket(ticket: Ticket) {
+      const target = this.columns.find((col) => col.status === ticket.status);
+      if (target) target.addTicket(ticket);
+   }
 }
