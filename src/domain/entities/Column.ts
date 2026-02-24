@@ -19,6 +19,11 @@ export class Column {
       this.colElement.innerHTML = `<div class="col-title">${title}</div>`;
       this.colElement.innerHTML += `<div class="tickets"></div>`;
 
+      const addBtn = document.createElement('button');
+      this.colElement.appendChild(addBtn);
+      addBtn.className = 'add-ticket-btn';
+      addBtn.textContent = 'Add Ticket';
+
       if (_tickets) {
          _tickets.forEach((ticket) => {
             this.colElement

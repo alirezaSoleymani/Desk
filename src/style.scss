@@ -27,6 +27,8 @@ body {
 
          .column {
             flex: 1;
+            display: flex;
+            flex-direction: column;
             background-color: #1f1f23;
             border-radius: 8px;
             padding: 16px;
@@ -46,22 +48,98 @@ body {
                display: flex;
                flex-direction: column;
                gap: 12px;
+               margin-bottom: 24px;
+
+               &:empty {
+                  margin-bottom: 0;
+               }
+
+               // .ticket {
+               //    background-color: #474747;
+               //    border-radius: 10px;
+               //    padding: 10px;
+               //    &:hover {
+               //       background-color: #32323a;
+               //    }
+               //    .ticket-title {
+               //       font-size: 18px;
+               //       color: #dcdcdc;
+               //       margin-bottom: 8px;
+               //    }
+               //    .ticket-description {
+               //       font-size: 14px;
+               //       color: #9ca3af;
+               //       word-break: break-all;
+               //    }
+               // }
+
                .ticket {
-                  background-color: #474747;
-                  border-radius: 10px;
-                  padding: 10px;
+                  background: rgba(30, 30, 36, 0.7);
+                  backdrop-filter: blur(8px);
+                  -webkit-backdrop-filter: blur(8px);
+                  border: 1px solid rgba(100, 116, 139, 0.2);
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  box-shadow: 0 1px 18px rgba(0, 0, 0, 0.35);
+                  transition: all 0.2s ease;
+                  cursor: grab;
+
+                  &:hover {
+                     background: rgba(40, 40, 48, 0.8);
+                     transform: translateY(-1px);
+                     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+                     border-color: rgba(99, 102, 241, 0.3);
+                  }
+
+                  &:active {
+                     cursor: grabbing;
+                     transform: translateY(-1px);
+                  }
 
                   .ticket-title {
-                     font-size: 18px;
-                     color: #dcdcdc;
-                     margin-bottom: 8px;
+                     color: #f1f5f9;
+                     font-weight: 500;
                   }
 
                   .ticket-description {
-                     font-size: 14px;
-                     color: #9ca3af;
-                     word-break: break-all;
+                     color: #cbd5e1;
                   }
+               }
+            }
+            .add-ticket-btn {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               gap: 6px;
+               width: 100%;
+               padding: 10px 12px;
+               // margin-top: 12px;
+               background: #2a2a30;
+               border: 1px solid #444;
+               border-radius: 8px;
+               color: #a0a0b0;
+               font-weight: 500;
+               cursor: pointer;
+               transition: all 0.18s ease;
+
+               &:hover {
+                  background: #3a3a42;
+                  color: #e0e0ff;
+                  border-color: #5a5a6a;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+                  transform: translateY(-1px);
+               }
+
+               &:active {
+                  transform: translateY(0);
+                  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+               }
+
+               /* Optional: plus icon styling */
+               &::before {
+                  content: '+';
+                  font-size: 1.3rem;
+                  font-weight: bold;
                }
             }
          }
